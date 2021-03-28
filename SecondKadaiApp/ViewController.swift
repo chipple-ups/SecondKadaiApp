@@ -1,19 +1,18 @@
-//
-//  ViewController.swift
-//  SecondKadaiApp
-//
-//  Created by 岡澤宏 on 2021/03/17.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var TextName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let resultViewController:ResultViewController = segue.destination as! ResultViewController
+        let textname = TextName.text
+        resultViewController.x = textname!
+    }
 
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    }
 }
-
